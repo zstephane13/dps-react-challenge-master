@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from "react";
 import Searchbar from "./components/searchbar";
 import Bodydiv from "./components/bodydiv";
 import { User, OldestUsersByCity } from "./types";
+import "./styles.css";
 
 const App: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
@@ -52,12 +53,12 @@ const App: React.FC = () => {
     }, {});
   }, [users]);
 
-  if (isLoading) return <div>Chargement en cours...</div>;
+  if (isLoading) return <div className="loading">Chargement en cours...</div>;
   if (error) return <div>Erreur: {error}</div>;
 
   return (
     <div className="App">
-      <h1>Customer Relationship Management</h1>
+      <h1 className="titre1">Customer Relationship Management</h1>
       <Searchbar
         inputValue={inputValue}
         setInputValue={setInputValue}

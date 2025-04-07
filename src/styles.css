@@ -5,7 +5,9 @@
 .searchbar {
   display: flex;
   gap: 75px;
-  margin-left: 225px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 .txt {
@@ -46,4 +48,12 @@ td {
 
 .highlight {
   background-color: yellow;
+}
+
+.titre1{
+  text-align: center;
+}
+
+.loading{
+  text-align: center;
 }
