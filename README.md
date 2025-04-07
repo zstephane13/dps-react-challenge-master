@@ -1,54 +1,44 @@
-# React + TypeScript + Vite
+# DPS Frontend Coding Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This repository contains a very basic web application based on Typescript and React. Main application file is `App.tsx`. Node and npm are required.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Environment Setup
 
-## Expanding the ESLint configuration
+Ensure you have Node.js (v14.x or later) and npm (v6.x or later) installed.  
+To set up and run the application, execute the following commands:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The application will then be accessible at http://localhost:5173/.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Project Context
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+You will be enhancing a new CRM (Customer Relationship Management) software aimed at managing customer data efficiently. Your task is to develop a feature that displays a searchable list of customers.
+
+Refer to the attached mockup image to guide your UI development 👇
+
+![Mockup](images/mockup.png)
+
+## Challenge Tasks
+
+-   **Fork this project:** Start by forking this repository
+-   **UI Implementation:** Implement the user interface according to the provided design mockup.
+-   **Data Integration:** Utilize the endpoint https://dummyjson.com/users to fetch user data. If no filter is applied all data is displayed.
+-   **Client-side Filtering:** Implement the following filters:
+    -   **Name Filter:** An input field that dynamically filters by `firstName` or `lastName` as you type.
+    -   **City Filter:** A dropdown that lists all cities present in the data. Users can select a city to filter the list accordingly.
+    -   **Highlight Feature:** A checkbox that when checked, highlights the oldest users within each city (use data field `city`)
+    -   **Optional:** Implement a 1-second debounce on the Name Filter input. This means the application should delay the filter action until 1 second has passed without any further input from the user. This optimization helps reduce the number of processing calls, enhancing performance.
+-   **Submission:** After completing the challenge, email us the URL of your GitHub repository.
+-   **Further information:**
+    -   If there is anything unclear regarding requirements, contact us by replying to our email.
+    -   Use small commits, we want to see your progress towards the solution.
+    -   Code clean and follow the best practices.
+
+\
+Happy coding!
